@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import './styles/Header.css';
+import Navbar from './Navbar';
 
 function Header() {
    return (
@@ -6,6 +8,7 @@ function Header() {
        <div className='section-1'>
                <div className="container">
                    <div className="row">
+                    <Navbar/>
                        <div className="col-12">
                            <div className="title d-flex">
                                <div className="justify-content-center align-self-center w-100">
