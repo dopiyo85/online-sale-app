@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from '../images/logo/logo.png';
 import shop from '../images/logo/shop.png';
+import { Container } from 'react-bootstrap';
 
 function Navbar () {
   
    return (
        <React.Fragment>
            <nav className="navbar  navbar-expand-lg navbar-light top-navbar navbar-fixed-top" data-toggle="sticky-onscroll">
-               <div className='container'>
+               <div className={ Container }>
                    <a className="navbar-brand" href="/">
                        <div className="logo float-md-left">
                            <img src= {logo} alt="logo" className= "img-fluid"/>
