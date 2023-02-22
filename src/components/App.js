@@ -3,16 +3,15 @@ import './styles/App.css';
 import Header from './Header';
 import AboutUs from './AboutUs';
 import Footer from './Footer';
-import ProductList from './ProductList';
+import ProductControl from './ProductControl';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
  return (
    <React.Fragment>
      <div className="container-fluid">
      <Header />
-     <ProductList />
+     <ProductControl />
      <AboutUs />
      <Footer />
      </div>
