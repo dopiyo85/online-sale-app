@@ -7,17 +7,18 @@ import ProductControl from './ProductControl';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
- return (
-   <React.Fragment>
-     <div className="container-fluid">
-     <Header />
-     <ProductControl />
-     <AboutUs />
-     <Footer />
-     </div>
-   </React.Fragment>   
- )
+ 
+  return (
+    <React.Fragment>
+      <div className="container-fluid">
+        <Header />
+        <ProductControl />
+        <AboutUs />
+        <Footer />
+
+      </div>
+    </React.Fragment>    
+  )
 }
 
 export default App;
-

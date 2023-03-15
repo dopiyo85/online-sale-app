@@ -1,51 +1,40 @@
 import React from 'react';
-import './styles/productForm.css';
-import PropTypes from 'prop-types'; 
 
-import {v4} from 'uuid'; //new code
 
-function NewProductForm(props) {
-    
-    // Function for handling onsubmission event
-    function handleNewProductFormSubmission(event){
-        event.preventDefault();
-        // console.log(event.target.name.value)
-        // console.log(event.target.price.value)
-        // console.log(event.target.description.value)
-        // console.log(event.target.quantity.value);
+function EditProductForm(props) {
 
-        props.onNewProductCreation({
+    function handleEditFormSubmission(event){
+        event.preventDefault()
+        props.onEditProduct({
             name: event.target.name.value,
             price: event.target.price.value,
             description: event.target.description.value,
             quantity: event.target.quantity.value,
-            id: v4()
         })
-
     }
 
     return (
         <React.Fragment>
-
-            <div className="container product-form">
-
-                <form className="new-product-form" onSubmit={handleNewProductFormSubmission}>
-
+            <div className="product-form">
+                
+                <form className="new-product-form" onSubmit={handleEditFormSubmission} >
                     <h1>Product Form</h1>
                     <div className="form-input-material">
                         <input type = 'text'
                             name = 'name'
+                            defaultValue = {props.product.name}
                             placeholder = ' '
                             className = 'form-control-material'
                             autoComplete="off"
                             id = 'name'
+                            required
                         />
                         <label htmlFor="name"> Name</label>
                     </div>
                     <div className="form-input-material">
                         <input type = 'text'
                             name = 'price'
-                            placeholder = ' '
+                            defaultValue = {props.product.price}
                             className = 'form-control-material'
                             autoComplete="off"
                             id = 'price'
@@ -56,7 +45,7 @@ function NewProductForm(props) {
                     <div className="form-input-material">
                         <textarea type = 'text'
                             name = 'description'
-                            placeholder = ' '
+                            defaultValue = {props.product.description}
                             className = 'form-control-material'
                             autoComplete="off"
                             id = 'description'
@@ -67,7 +56,7 @@ function NewProductForm(props) {
                     <div className="form-input-material">
                         <input type = 'number'
                             name = 'quantity'
-                            placeholder = ' '
+                            defaultValue = {props.product.quantity}
                             className = 'form-control-material'
                             autoComplete="off"
                             id = 'quantity'
@@ -75,15 +64,15 @@ function NewProductForm(props) {
                         />
                         <label htmlFor="quantity"> Quantity</label>
                     </div>
-                    <button type="submit" className="btn btn-primary btn-ghost">Add Product</button>    
+                    <br/>
+                    
+                    <button type="submit" className="btn btn-primary btn-ghost">Update Product</button>    
                 </form>
             </div>
         </React.Fragment>
     )
 }
 
-NewProductForm.propTypes = {
-    onNewProductCreation: PropTypes.func
-}
 
-export default NewProductForm;
+
+export default EditProductForm
